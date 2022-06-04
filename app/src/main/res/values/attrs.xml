@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="BannerView">
+        <attr name="text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="MultiToggleButton">
+        <attr name="labelText" format="string"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+</resources>

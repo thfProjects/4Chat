@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/marko/.gradle/caches/transforms-3/c845d7e0bfdce8285192bf8797cf7940/transformed/appcompat-1.4.1/res/layout/abc_list_menu_item_layout.xml" value="0.32518115942028986" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_message_background.xml" value="0.299" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_message_background_top.xml" value="0.299" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_message_background_top_right.xml" value="0.299" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/activity_main.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/banner_view.xml" value="0.33" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/chat_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/chat_message_item.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/home_fragment.xml" value="0.32518115942028986" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/multi_toggle_button.xml" value="0.32518115942028986" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/user_actions_dialog_fragment.xml" value="0.32518115942028986" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/menu/chat_menu.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/marko/AppData/Local/Android/sdk/platforms/android-32/data/res/layout/list_menu_item_layout.xml" value="0.32518115942028986" />
+        <entry key="..\:/Users/marko/AppData/Local/Android/sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.32518115942028986" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
