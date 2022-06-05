@@ -3,10 +3,6 @@ package com.thf.chat.viewmodel
 import android.app.Application
 import androidx.lifecycle.*
 import com.thf.chat.data.ChatClient
-import com.thf.chat.data.ChatRepository
-import com.thf.chat.model.ChatMessage
-import dagger.hilt.android.lifecycle.HiltViewModel
-import javax.inject.Inject
 
 class ChatViewModel (application: Application, savedStateHandle: SavedStateHandle): AndroidViewModel(application) {
 
