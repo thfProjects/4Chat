@@ -10,25 +10,24 @@ import javax.inject.Inject
 
 class ChatViewModel (application: Application, savedStateHandle: SavedStateHandle): AndroidViewModel(application) {
 
-    private val chatRepository = ChatRepository()
+    private val chatClient = ChatClient(savedStateHandle["username"]?:"Guest")
 
     var username: String? = null
 
     init {
-        chatRepository.startChatService(application, savedStateHandle["username"]?:"Guest")
-        chatRepository.onConnect = {
-            username = chatRepository.username
+        chatClient.onConnect = {
+            username = chatClient.username
         }
     }
 
-    val messages = chatRepository.messages
+    val messages = chatClient.messages
 
-    val users = chatRepository.users
+    val users = chatClient.users
 
     val whisperingTo: LiveData<String?> = MutableLiveData(null)
 
     fun handleSendButtonClick (messageContent: String) {
-        if (messageContent != "") chatRepository.sendChatMessage(messageContent, whisperingTo.value)
+        if (messageContent != "") chatClient.sendChatMessage(messageContent, whisperingTo.value)
     }
 
     fun setWhisperingTo(user: String?) {
@@ -36,7 +35,7 @@ class ChatViewModel (application: Application, savedStateHandle: SavedStateHandl
     }
 
     override fun onCleared() {
-        chatRepository.stopChatService()
+        chatClient.close()
     }
 
     private fun <T> LiveData<T>.setValue (value: T) {
