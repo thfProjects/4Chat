@@ -27,9 +27,18 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+        binding.usernameEditText.setText(viewmodel.usernameAttempt)
+
         binding.startChatButton.setOnClickListener {
-            val args = bundleOf("username" to binding.usernameEditText.text.toString())
-            findNavController().navigate(R.id.action_homeFragment_to_chatFragment, args)
+            viewmodel.handleStartChatButton(binding.usernameEditText.text.toString())
+        }
+
+        viewmodel.invalidUsername.observe(viewLifecycleOwner) { invalid ->
+            binding.invalidUsernameTextView.visibility = if (invalid) View.VISIBLE else View.INVISIBLE
+        }
+
+        viewmodel.navToChatCommand.observe(viewLifecycleOwner) {
+            findNavController().navigate(R.id.action_homeFragment_to_chatFragment)
         }
     }
 }

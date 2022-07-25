@@ -4,16 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/marko/.gradle/caches/transforms-3/c845d7e0bfdce8285192bf8797cf7940/transformed/appcompat-1.4.1/res/layout/abc_list_menu_item_layout.xml" value="0.32518115942028986" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/button_background.xml" value="0.299" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_edittext_background.xml" value="0.299" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_message_background.xml" value="0.299" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_message_background_top.xml" value="0.299" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_message_background_top_left.xml" value="0.299" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/chat_message_background_top_right.xml" value="0.299" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/ic_baseline_send_24.xml" value="0.299" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/drawable/send_button_background.xml" value="0.299" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/activity_main.xml" value="0.16197916666666667" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/alert_dialog_title.xml" value="0.32518115942028986" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/banner_view.xml" value="0.33" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/chat_fragment.xml" value="0.25" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/chat_message_item.xml" value="0.17604166666666668" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/connection_lost_view.xml" value="0.32518115942028986" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/home_fragment.xml" value="0.32518115942028986" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/multi_toggle_button.xml" value="0.32518115942028986" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/user_actions_dialog_fragment.xml" value="0.32518115942028986" />
+        <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/layout/welcome_view.xml" value="0.32518115942028986" />
         <entry key="..\:/Users/marko/AndroidStudioProjects/Chat/app/src/main/res/menu/chat_menu.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/marko/AppData/Local/Android/sdk/platforms/android-32/data/res/layout/list_menu_item_layout.xml" value="0.32518115942028986" />
         <entry key="..\:/Users/marko/AppData/Local/Android/sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.32518115942028986" />

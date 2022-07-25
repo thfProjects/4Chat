@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="BannerView">
         <attr name="text" format="string"/>
+        <attr name="textColor" format="color"/>
     </declare-styleable>
 
     <declare-styleable name="MultiToggleButton">

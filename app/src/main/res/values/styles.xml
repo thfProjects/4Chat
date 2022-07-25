@@ -5,4 +5,10 @@
         <item name="android:textColorSecondary">@color/white</item>
         <item name="actionMenuTextColor">@color/white</item>
     </style>
+
+    <style name="Theme.Chat.Dialog.Alert" parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+        <item name="android:windowBackground">@color/design_default_color_primary</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
 </resources>

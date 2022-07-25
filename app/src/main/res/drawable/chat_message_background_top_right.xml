@@ -6,7 +6,7 @@
                 android:bottomLeftRadius="8dp"
                 android:bottomRightRadius="8dp"
                 android:topLeftRadius="8dp"/>
-            <solid android:color="@color/design_default_color_primary"/>
+            <solid android:color="?attr/colorPrimary"/>
         </shape>
     </item>
 </selector>

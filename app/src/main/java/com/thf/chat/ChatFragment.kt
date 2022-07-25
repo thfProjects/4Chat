@@ -1,12 +1,18 @@
 package com.thf.chat
 
+import android.annotation.SuppressLint
+import android.graphics.Rect
+import android.graphics.RectF
 import android.os.Bundle
 import android.view.*
 import android.widget.ArrayAdapter
+import androidx.activity.addCallback
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.thf.chat.adapter.ChatMessageRecyclerAdapter
 import com.thf.chat.databinding.ChatFragmentBinding
@@ -21,6 +27,10 @@ class ChatFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
+
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            showLeaveChatDialog()
+        }
     }
 
     override fun onCreateView(
@@ -29,14 +39,17 @@ class ChatFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = ChatFragmentBinding.inflate(inflater, container, false)
+        (activity as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
         return binding.root
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val chatMessageAdapter = ChatMessageRecyclerAdapter()
+        val chatMessageAdapter = ChatMessageRecyclerAdapter(requireActivity())
 
         chatMessageAdapter.onMessageSenderClick = {
-            if (it != viewModel.username) showUserActionDialog(it)
+            viewModel.handleMessageSenderClick(it)
         }
 
         val userAdapter = ArrayAdapter<String>(requireContext(), android.R.layout.simple_list_item_1)
@@ -50,9 +63,17 @@ class ChatFragment : Fragment() {
             adapter = userAdapter
             setOnItemClickListener { adapterView, view, i, l ->
                 userAdapter.getItem(i)?.let {
-                    if (it != viewModel.username) showUserActionDialog(it)
+                    viewModel.handleUserClick(it)
                 }
             }
+        }
+
+        binding.rootLayout.addOnClickOutsideViewCallback(binding.newChatButton) {
+            viewModel.handleClickOutsideNewChatButton()
+        }
+
+        binding.newChatButton.setOnClickListener {
+            viewModel.handleNewChatButtonClick()
         }
 
         binding.sendButton.setOnClickListener {
@@ -74,6 +95,15 @@ class ChatFragment : Fragment() {
             userAdapter.notifyDataSetChanged()
         }
 
+        viewModel.newChatButtonClicked.observe(viewLifecycleOwner) {
+            if (it) {
+                binding.newChatButton.text = "Really?"
+            }
+            else {
+                binding.newChatButton.text = "New Chat"
+            }
+        }
+
         viewModel.whisperingTo.observe(viewLifecycleOwner) {
             it?.let {
                 binding.drawerLayout.closeDrawer(GravityCompat.END)
@@ -86,6 +116,10 @@ class ChatFragment : Fragment() {
                     visibility = View.GONE
                 }
             }
+        }
+
+        viewModel.showUserActionDialogCommand.observe(viewLifecycleOwner) {
+            showUserActionDialog(it)
         }
     }
 
@@ -109,5 +143,13 @@ class ChatFragment : Fragment() {
         val args = bundleOf("user" to user)
         dialog.arguments = args
         dialog.show(childFragmentManager, "userActions")
+    }
+
+    private fun showLeaveChatDialog() {
+        val dialog = LeaveChatDialogFragment()
+        dialog.onPositiveButton = {
+            findNavController().popBackStack()
+        }
+        dialog.show(childFragmentManager, "leave")
     }
 }

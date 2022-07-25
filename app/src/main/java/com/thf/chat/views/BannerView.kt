@@ -1,6 +1,7 @@
 package com.thf.chat.views
 
 import android.content.Context
+import android.graphics.ColorFilter
 import android.util.AttributeSet
 import android.widget.ImageButton
 import android.widget.LinearLayout
@@ -27,6 +28,10 @@ class BannerView(context: Context, attrs: AttributeSet? = null): LinearLayout(co
         context.theme.obtainStyledAttributes(attrs, R.styleable.BannerView, 0, 0).apply {
             try {
                 textView.text = getString(R.styleable.BannerView_text)?: ""
+                getColorStateList(R.styleable.BannerView_textColor)?.let {
+                    textView.setTextColor(it)
+                    dismissButton.imageTintList = it
+                }
             } finally {
                 recycle()
             }

@@ -16,12 +16,12 @@ class MultiToggleButton(context: Context, attrs: AttributeSet? = null): LinearLa
     private val label: TextView
     private val toggleContent: TextView
 
-    var items = emptyArray<String>()
+    var items: Array<out Any> = emptyArray()
         set(value) {
             field = value
             if (value.isNotEmpty()){
                 selectedItem = 0
-                toggleContent.text = value[selectedItem]
+                toggleContent.text = value[selectedItem].toString()
                 invalidate()
             }else {
                 selectedItem = -1
@@ -64,6 +64,13 @@ class MultiToggleButton(context: Context, attrs: AttributeSet? = null): LinearLa
         toggle()
     }
 
+    fun setSelected (item: Any) {
+        if (items.contains(item)) {
+            selectedItem = items.indexOf(item)
+            toggleContent.text = items[selectedItem].toString()
+        }
+    }
+
     fun onToggle (func: (Int) -> Unit) {
         onToggle = func
     }
@@ -73,7 +80,7 @@ class MultiToggleButton(context: Context, attrs: AttributeSet? = null): LinearLa
         else {
             if(items.lastIndex != selectedItem) selectedItem ++
             else selectedItem = 0
-            toggleContent.text = items[selectedItem]
+            toggleContent.text = items[selectedItem].toString()
             onToggle(selectedItem)
             invalidate()
         }
