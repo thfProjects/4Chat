@@ -1,2 +1,3 @@
 # 4Chat
-Android app for random chatrooms with 4 people in each one
+Android app for joining random chatrooms with 4 people in each one  
+Built with MVVM pattern
