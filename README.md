@@ -1,6 +1,7 @@
 # 4Chat
 Android app for joining random chatrooms with 4 people in each one  
-Built with MVVM pattern utilizing LiveData
+Built with MVVM pattern utilizing LiveData  
+Backend at [4chat-Server](https://github.com/thfProjects/4Chat-Server)
 
 <img src="https://i.imgur.com/g5rL4b5.jpg" width="100"> <img src="https://i.imgur.com/WOp7Fxu.jpg" width="100"> <img src="https://i.imgur.com/dKlkdc2.jpg" width="100"> 
 <img src="https://i.imgur.com/zjw4F5E.jpg" width="100"> <img src="https://i.imgur.com/MZ1J2Sf.jpg" width="100"> <img src="https://i.imgur.com/OJBtKYq.jpg" width="100">
